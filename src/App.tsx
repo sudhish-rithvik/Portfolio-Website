@@ -9,7 +9,9 @@ import Skills from './components/Skills';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import LoadingScreen from './components/LoadingScreen';
+import { Analytics } from '@vercel/analytics/react';
 import './App.css';
+
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -137,6 +139,8 @@ const App: React.FC = () => {
         <Achievements />
         <Contact />
       </div>
+
+      <Analytics />
     </>
   );
 };
