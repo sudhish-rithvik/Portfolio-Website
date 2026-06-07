@@ -27,18 +27,32 @@ body:not(.loading-active) .navbar {
 .nav-container {
   pointer-events: auto;
 
-  /* Liquid glass base with high contrast for light backgrounds */
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(28px) saturate(200%) brightness(1.02);
-  -webkit-backdrop-filter: blur(28px) saturate(200%) brightness(1.02);
+  /* True liquid glass base - low opacity gradient to show the backdrop blur clearly */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.32) 0%,
+    rgba(255, 255, 255, 0.15) 100%
+  );
+  
+  /* Thick glass refraction with high blur and saturation */
+  backdrop-filter: blur(28px) saturate(220%) brightness(1.04);
+  -webkit-backdrop-filter: blur(28px) saturate(220%) brightness(1.04);
 
-  /* Prismatic gradient border & soft shadow lift */
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  /* Very sharp white border representing the outer glass rim */
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  
+  /* Complex light-deflecting shadow stacks:
+     - Inset 1: specular highlight top rim reflection
+     - Inset 2: soft purple chromatic refraction ring
+     - Inset 3: standard white edge highlight
+     - Multiple outer drop shadows to define boundaries against the light background
+  */
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.85) inset,
-    0 0 0 1.5px rgba(103, 80, 232, 0.06) inset,
-    0 4px 18px rgba(0, 0, 0, 0.03),
-    0 12px 32px rgba(103, 80, 232, 0.05),
+    0 0 0 1px rgba(255, 255, 255, 0.8) inset,
+    0 0 0 2px rgba(103, 80, 232, 0.06) inset,
+    0 2px 10px rgba(0, 0, 0, 0.02),
+    0 12px 30px rgba(103, 80, 232, 0.09),
+    0 22px 48px rgba(0, 0, 0, 0.05),
     0 1px 0 rgba(255, 255, 255, 0.95) inset;
 
   border-radius: 100px;
@@ -53,13 +67,17 @@ body:not(.loading-active) .navbar {
 }
 
 .nav-container:hover {
-  background: rgba(255, 255, 255, 0.78);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.42) 0%,
+    rgba(255, 255, 255, 0.22) 100%
+  );
   transform: translateY(-1px);
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.95) inset,
-    0 0 0 1.5px rgba(103, 80, 232, 0.12) inset,
-    0 6px 22px rgba(103, 80, 232, 0.08),
-    0 16px 40px rgba(0, 0, 0, 0.05),
+    0 0 0 2px rgba(103, 80, 232, 0.12) inset,
+    0 6px 20px rgba(103, 80, 232, 0.12),
+    0 16px 44px rgba(0, 0, 0, 0.06),
     0 1px 0 rgba(255, 255, 255, 0.95) inset;
 }
 
