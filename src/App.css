@@ -1,0 +1,23 @@
+/* App-wide transition & loading system styles */
+
+/* Custom Cursor Hiding during load */
+.loading-active #cursor,
+.loading-active #cursor-ring {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  display: none !important;
+}
+
+/* Page content reveal transitions */
+.app-content {
+  opacity: 0;
+  transform: translateY(24px) scale(0.985);
+  transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.app-content.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}

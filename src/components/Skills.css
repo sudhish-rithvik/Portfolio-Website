@@ -1,0 +1,106 @@
+
+
+.skills-rows-container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.skills-row-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.2rem 1.6rem; /* Optimized compact padding */
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.skills-row-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow);
+}
+
+.skills-row-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 170px; /* Compact header column */
+  flex-shrink: 0;
+}
+
+.skills-row-icon {
+  font-size: 1.15rem;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+}
+
+.skills-row-header h3 {
+  font-family: var(--font-sans); /* Space Grotesk sans-serif */
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0;
+}
+
+.skills-row-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem; /* Compact gap */
+  padding: 0.1rem 0;
+  flex: 1;
+}
+
+.skill-item-pill {
+  font-family: var(--font-sans);
+  font-size: 0.8rem; /* Compact font size */
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.85rem; /* Compact pill padding */
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.skill-item-pill:hover {
+  transform: translateY(-1.5px);
+  background: var(--accent) !important;
+  color: #ffffff !important;
+  border-color: var(--accent);
+  box-shadow: 0 4px 8px rgba(103, 80, 232, 0.15);
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 900px) {
+  .skills-row-card {
+    gap: 1.2rem;
+    padding: 1rem 1.2rem;
+  }
+  .skills-row-header {
+    width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-row-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 1.2rem 1.2rem;
+    border-radius: var(--radius);
+  }
+  .skills-row-header {
+    width: 100%;
+  }
+  .skills-row-tags {
+    width: 100%;
+  }
+}

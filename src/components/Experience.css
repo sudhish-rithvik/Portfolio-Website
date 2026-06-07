@@ -1,0 +1,191 @@
+/* ====== EXPERIENCE TIMELINE ====== */
+.timeline {
+  max-width: 820px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+/* Vertical clean line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; 
+  top: 10px; 
+  bottom: 10px;
+  width: 2px;
+  background: var(--border-light);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem; /* Compact section spacing */
+  padding-left: 1rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* timeline-item cards */
+.timeline-item.glass-card {
+  padding: 1.5rem 1.8rem; /* Compact card padding */
+}
+
+/* White sphere nodes with purple core */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2.85rem;
+  top: 1.5rem; /* Aligned with compact top padding */
+  width: 16px;
+  height: 16px;
+  background: var(--surface);
+  border: 2px solid var(--border-light);
+  border-radius: 50%;
+  z-index: 2;
+  transition: all var(--transition-fast);
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  left: -2.6rem;
+  top: 1.75rem; /* Aligned with compact top padding */
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  z-index: 3;
+  transition: all var(--transition-fast);
+  pointer-events: none;
+}
+
+.timeline-item:hover::before {
+  transform: scale(1.15);
+  border-color: var(--accent);
+}
+
+.timeline-item:hover::after {
+  transform: scale(1.15);
+}
+
+/* Date chip - clean pill */
+.timeline-date {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--surface-2);
+  color: var(--accent);
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border: 1px solid var(--border);
+}
+
+.experience-header-row {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.experience-company-logo {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+  background: #ffffff;
+  padding: 4px;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.experience-header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
+.timeline-item h3 {
+  font-family: var(--font-sans);
+  font-size: 1.15rem; /* Slightly smaller header size */
+  font-weight: 700;
+  margin-bottom: 0;
+  color: var(--text);
+}
+
+/* Compact Roles List */
+.roles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0.6rem 0;
+  padding-left: 1.2rem;
+}
+
+.role-subitem {
+  display: list-item;
+  list-style-type: disc;
+  color: var(--accent); /* Bullet matches accent color */
+  padding-left: 0.2rem;
+}
+
+.role-title-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  color: var(--text-secondary);
+}
+
+.role-title {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+.role-badge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  background: var(--accent-dim);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+  padding: 0.05rem 0.35rem;
+  border-radius: 100px;
+  text-transform: uppercase;
+}
+
+.role-separator {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.role-period {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0 !important;
+}
+
+.experience-details {
+  font-size: 0.86rem; /* Slightly smaller details size */
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-top: 0.6rem;
+  border-top: 1px dashed var(--border);
+  padding-top: 0.6rem;
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 600px) {
+  .timeline { padding-left: 1.8rem; }
+  .timeline-item { padding-left: 0.5rem; }
+  .timeline-item::before { left: -2.15rem; }
+  .timeline-item::after { left: -1.9rem; }
+}

@@ -1,0 +1,92 @@
+/* ====== VOLUNTEERING SECTION ====== */
+
+.vol-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.vol-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.2rem 1.8rem;
+  min-height: 280px;
+  transition: all var(--transition-normal);
+}
+
+.vol-icon-circle {
+  font-size: 1.25rem;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  width: 44px;
+  height: 44px;
+  background: var(--surface-2);
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.vol-card:hover .vol-icon-circle {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  box-shadow: 0 4px 10px rgba(103, 80, 232, 0.2);
+}
+
+.vol-card-role {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.vol-card-org {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+}
+
+.vol-card-loc {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: auto; /* Push category tag to bottom */
+  line-height: 1.45;
+}
+
+.vol-card-tag {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 1.4rem;
+  border-top: 1px dashed var(--border);
+  padding-top: 0.8rem;
+  width: 100%;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .vol-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+  }
+  
+  .vol-card {
+    padding: 1.8rem 1.6rem;
+    min-height: 260px;
+  }
+}

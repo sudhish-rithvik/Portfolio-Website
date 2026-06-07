@@ -1,0 +1,155 @@
+/* ==========================================================================
+   LIQUID GLASS COFFEE LOADER SCREEN CSS
+   ========================================================================== */
+
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg, #fafaf7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  overflow: hidden;
+  font-family: var(--font-sans), sans-serif;
+  color: var(--text, #1a1a1f);
+  transition: opacity 0.8s cubic-bezier(0.85, 0, 0.15, 1),
+              transform 0.8s cubic-bezier(0.85, 0, 0.15, 1),
+              filter 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+  will-change: opacity, transform, filter;
+}
+
+/* Exit transition */
+.loading-container.exit {
+  opacity: 0;
+  transform: scale(1.05);
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+/* Soft ambient background glow matching the color scheme */
+.loader-bg-glow {
+  position: absolute;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(103, 80, 232, 0.12) 0%, rgba(103, 80, 232, 0) 70%);
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 1;
+  animation: pulseGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(1.2); opacity: 1.1; }
+}
+
+/* Central container */
+.loader-center-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* SVG drop shadow for subtle depth */
+.loader-coffee-svg {
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.02)) 
+          drop-shadow(0 16px 40px rgba(103, 80, 232, 0.04));
+}
+
+/* ====== STEAM ANIMATION ====== */
+@keyframes steamRise {
+  0% {
+    stroke-dashoffset: 24;
+    opacity: 0;
+    transform: translateY(2px) scaleX(0.9);
+  }
+  15% {
+    opacity: 0.65;
+  }
+  60% {
+    opacity: 0.65;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+    transform: translateY(-12px) scaleX(1.1);
+  }
+}
+
+.loader-steam-path {
+  stroke-dasharray: 24;
+  animation: steamRise 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  transform-origin: bottom center;
+}
+
+.steam-1 {
+  animation-delay: 0s;
+}
+
+.steam-2 {
+  animation-delay: 1.75s;
+}
+
+/* ====== LIQUID WAVE ANIMATION ====== */
+@keyframes waveMoveLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-200px); }
+}
+
+@keyframes waveMoveRight {
+  0% { transform: translateX(-200px); }
+  100% { transform: translateX(0); }
+}
+
+.wave-front {
+  animation: waveMoveLeft 3.5s linear infinite;
+}
+
+.wave-back {
+  animation: waveMoveRight 2.8s linear infinite;
+}
+
+/* ====== LOADING TEXT & DOTS ====== */
+.loader-text {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--text, #1a1a1f);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  padding-left: 0.25em; /* Compensate for letter spacing */
+}
+
+.loader-text span {
+  display: inline-block;
+  animation: dotPulse 1.5s infinite;
+  font-weight: 900;
+}
+
+.loader-text .dot-1 {
+  animation-delay: 0s;
+}
+
+.loader-text .dot-2 {
+  animation-delay: 0.25s;
+}
+
+.loader-text .dot-3 {
+  animation-delay: 0.5s;
+}
+
+@keyframes dotPulse {
+  0% { opacity: 0.25; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-2px); }
+  100% { opacity: 0.25; transform: translateY(0); }
+}
