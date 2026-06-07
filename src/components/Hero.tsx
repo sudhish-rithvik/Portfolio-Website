@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
               <a href="https://www.instagram.com/sudhish_rithvik" target="_blank" rel="noreferrer" aria-label="Instagram">
                 <FaInstagram />
               </a>
-              <a href="mailto:sudhishrithvik.work@gmail.com" aria-label="Email">
+              <a href="mailto:contact@sudhishrithvik.dev" aria-label="Email">
                 <FaEnvelope />
               </a>
             </div>

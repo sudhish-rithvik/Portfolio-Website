@@ -12,8 +12,8 @@ const Contact: React.FC = () => {
             <p>I'm always open to discussing new projects, internships, hackathon collaborations, or engineering roles.</p>
             
             <div className="contact-info-pills">
-              <a href="mailto:sudhishrithvik.work@gmail.com" className="contact-pill-item">
-                <FaPaperPlane /> sudhishrithvik.work@gmail.com
+              <a href="mailto:contact@sudhishrithvik.dev" className="contact-pill-item">
+                <FaPaperPlane /> contact@sudhishrithvik.dev
               </a>
             </div>
 
